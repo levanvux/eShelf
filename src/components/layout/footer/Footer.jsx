@@ -9,30 +9,32 @@ import {
 
 const Footer = () => {
   return (
-    <footer className=" text-gray-400 border-t-[1px]">
-      <div className="grid grid-cols-3 text-center text-sm py-4 overflow-hidden">
-        <span>© 2024 eShelf. All rights reserved.</span>
-        <span>Terms · Privacy Policy</span>
-        <span className="flex gap-4 relative -top-1 -right-24">
+    <footer className="border-t border-gray-300 text-gray-400">
+      <div className="grid grid-cols-3 overflow-hidden py-4 text-center text-sm">
+        <span className="cursor-pointer select-none">© 2024 eShelf.</span>
+        <span className="cursor-pointer select-none">
+          Điều khoản · Chính sách
+        </span>
+        <span className="relative -right-24 -top-1 flex gap-4">
           <AiFillFacebook
-            className="hover:text-gray-500"
+            className="cursor-pointer hover:text-gray-500"
             size={24}
             title="Facebook"
           />
           <AiFillInstagram
-            className="hover:text-gray-500"
+            className="cursor-pointer hover:text-gray-500"
             size={24}
             title="Instagram"
           />
           <AiOutlineWechat
-            className="hover:text-gray-500"
+            className="cursor-pointer hover:text-gray-500"
             size={24}
-            title="Wechat"
+            title="WeChat"
           />
           <AiFillYoutube
-            className="hover:text-gray-500"
+            className="cursor-pointer hover:text-gray-500"
             size={24}
-            title="Youtube"
+            title="YouTube"
           />
           <a href="https://github.com/levanvux/eShelf" target="_blank">
             <AiFillGithub
