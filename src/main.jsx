@@ -4,42 +4,63 @@ import App from "./App.jsx";
 import "./styles/global.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.jsx";
-import Categories from "./pages/Categories.jsx";
-import BookReview from "./pages/BookReview.jsx";
+import Genres from "./pages/Genres.jsx";
 import Feedback from "./pages/Feedback.jsx";
 import Donate from "./pages/Donate.jsx";
 import LoginRegister from "./pages/LoginRegister.jsx";
+import BookDetail from "./pages/BookDetail.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import SearchResult from "./pages/SearchResult.jsx";
+import Reading from "./pages/Reading.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     errorElement: <ErrorPage />,
     element: <App />,
-  },
-  {
-    path: "categories",
-    element: <Categories />,
-  },
-  {
-    path: "review",
-    element: <BookReview />,
-  },
-  {
-    path: "feedback",
-    element: <Feedback />,
-  },
-  {
-    path: "donate",
-    element: <Donate />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "genres",
+        element: <Genres />,
+      },
+      {
+        path: "search/:searchvalues",
+        element: <SearchResult />,
+      },
+      {
+        path: "feedback",
+        element: <Feedback />,
+      },
+      {
+        path: "donate",
+        element: <Donate />,
+      },
+      {
+        path: "/book/:id",
+        element: <BookDetail />,
+      },
+      {
+        path: "/feedback",
+        element: <Feedback />,
+      },
+    ],
   },
   {
     path: "auth",
     element: <LoginRegister />,
+  },
+  {
+    path: "reading/:id",
+    element: <Reading />,
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );
