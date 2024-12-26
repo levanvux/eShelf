@@ -1,31 +1,30 @@
 import { useState, useRef, useEffect } from "react";
 import { Search } from "lucide-react";
 
-const SearchBox = (props) => {
-  const { setIsSearchBoxOpen } = props;
+const SearchBox = ({ setIsSearchBoxOpen }) => {
+  const convertText = (term) => {
+    const output = term
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d")
+      .replace(/\s+/g, "")
+      .replace(/\+/g, "-");
+    return output;
+  };
 
-  // Có mở ô tìm kiếm ra không
   const [isEditing, setIsEditing] = useState(false);
-
+  const [searchTerm, setSearchTerm] = useState("");
   const toggleEditing = () => {
     setIsEditing(true);
     setIsSearchBoxOpen(true);
   };
-
-  // Nội dung nhập vào ô tìm kiếm
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  // Ô nhập tự thu nhỏ khi click chuột ra ngoài
   const searchBoxRef = useRef(null);
-
   const handleClickOutside = (event) => {
     if (searchBoxRef.current && !searchBoxRef.current.contains(event.target)) {
       setIsEditing(false);
       setIsSearchBoxOpen(false);
+      setSearchTerm("");
     }
   };
 
@@ -39,21 +38,27 @@ const SearchBox = (props) => {
   return (
     <>
       {isEditing ? (
-        <div className="flex border rounded px-2 py-1" ref={searchBoxRef}>
+        <div
+          className="flex rounded border bg-white px-2 py-1"
+          ref={searchBoxRef}
+        >
           <input
             type="text"
             value={searchTerm}
-            onChange={handleInputChange}
-            className="focus:outline-none mr-2"
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="mr-2 text-gray-800 focus:outline-none"
             placeholder="Tìm kiếm sách"
           />
-          <button className="hover:bg-gray-300 p-1 rounded">
+          <a
+            href={`/search/${convertText(searchTerm)}&-&`}
+            className="rounded p-1 hover:bg-gray-300"
+          >
             <Search size={20} color="#888" />
-          </button>
+          </a>
         </div>
       ) : (
         <button
-          className="text-black opacity-70 hover:opacity-100 "
+          className="text-black opacity-70 hover:opacity-100"
           onClick={toggleEditing}
         >
           <Search size={28} />

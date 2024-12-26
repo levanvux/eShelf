@@ -34,7 +34,7 @@ const Dropdown = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className={`text-black opacity-70 hover:opacity-100 flex items-center justify-center w-10 h-10 transition-transform duration-300 ${
+        className={`flex h-10 w-10 items-center justify-center text-black opacity-70 transition-transform duration-300 hover:opacity-100 ${
           isOpen ? "rotate-90" : ""
         }`}
       >
@@ -42,33 +42,37 @@ const Dropdown = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
+        <div className="absolute right-0 z-10 mt-2 w-48 rounded-md bg-white text-gray-800 shadow-lg">
           <Link
-            to="categories"
-            className="px-4 py-2 block hover:bg-black hover:text-white cursor-pointer"
+            onClick={() => setIsOpen(false)}
+            to="genres"
+            className="block cursor-pointer px-4 py-2 hover:bg-black hover:text-white"
           >
-            <List className="inline mr-3" />
-            Mục Lục
+            <List className="mr-3 inline" />
+            Thể Loại
           </Link>
           <Link
-            to="review"
-            className="px-4 py-2 block hover:bg-black hover:text-white cursor-pointer"
+            onClick={() => setIsOpen(false)}
+            to="/"
+            className="block cursor-pointer px-4 py-2 hover:bg-black hover:text-white"
           >
-            <Star className="inline mr-3" />
+            <Star className="mr-3 inline" />
             Review Sách
           </Link>
           <Link
+            onClick={() => setIsOpen(false)}
             to="feedback"
-            className="px-4 py-2 block hover:bg-black hover:text-white cursor-pointer"
+            className="block cursor-pointer px-4 py-2 hover:bg-black hover:text-white"
           >
-            <MessageSquareWarning className="inline mr-3" />
+            <MessageSquareWarning className="mr-3 inline" />
             Báo Lỗi
           </Link>
           <Link
+            onClick={() => setIsOpen(false)}
             to="donate"
-            className="px-4 py-2 block hover:bg-black hover:text-white cursor-pointer"
+            className="block cursor-pointer px-4 py-2 hover:bg-black hover:text-white"
           >
-            <CircleDollarSign className="inline mr-3" />
+            <CircleDollarSign className="mr-3 inline" />
             Ủng Hộ
           </Link>
         </div>
