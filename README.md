@@ -1,6 +1,7 @@
 # eShelf
 
-Đồ án môn học IE104. Website đọc sách eBooks.
+Đồ án môn học IE104. Website đọc sách eBooks.  
+Công nghệ sử dụng: ReactJS, TailwindCSS.
 
 ## Danh sách thành viên
 
@@ -34,9 +35,15 @@ http://localhost:5173/
 ## Hình ảnh demo
 
 ![Main Page](public/demo/main.png)
+
 ![Login Page](public/demo/login-register.png)
+
 ![Search Result Page](public/demo/search-result.png)
+
 ![Book Detail Page](public/demo/book-detail.png)
+
 ![Genres Page](public/demo/genres.png)
+
 ![Donate Page](public/demo/donate.png)
+
 ![Feedback Page](public/demo/feedback.png)
