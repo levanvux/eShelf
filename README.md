@@ -1,7 +1,8 @@
 # eShelf
 
 Đồ án môn học IE104. Website đọc sách eBooks.  
-Công nghệ sử dụng: ReactJS, TailwindCSS.
+Công nghệ sử dụng: ReactJS, TailwindCSS.  
+Website tham khảo: [Z-Library](https://en.wikipedia.org/wiki/Z-Library)
 
 ## Danh sách thành viên
 
