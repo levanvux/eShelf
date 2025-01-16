@@ -37,14 +37,26 @@ http://localhost:5173/
 
 ![Main Page](public/demo/main.png)
 
+---
+
 ![Login Page](public/demo/login-register.png)
+
+---
 
 ![Search Result Page](public/demo/search-result.png)
 
+---
+
 ![Book Detail Page](public/demo/book-detail.png)
+
+---
 
 ![Genres Page](public/demo/genres.png)
 
+---
+
 ![Donate Page](public/demo/donate.png)
+
+---
 
 ![Feedback Page](public/demo/feedback.png)
