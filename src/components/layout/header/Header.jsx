@@ -6,7 +6,7 @@ import { useState } from "react";
 const Header = ({ username, setUsername }) => {
   const [isSearchBoxOpen, setIsSearchBoxOpen] = useState(false);
   return (
-    <div className="flex justify-between pl-2 pr-6">
+    <div className="flex flex-wrap items-center justify-between gap-2 px-4">
       <a
         className="cursor-pointer self-center bg-green-400 p-1 text-white"
         href="/"
@@ -16,8 +16,8 @@ const Header = ({ username, setUsername }) => {
       </a>
 
       <div
-        className={`mt-2 flex flex-row-reverse ${
-          isSearchBoxOpen ? "gap-4" : "gap-12"
+        className={`mt-2 flex flex-wrap items-center justify-end ${
+          isSearchBoxOpen ? "gap-2" : "gap-4"
         }`}
       >
         <Dropdown />
