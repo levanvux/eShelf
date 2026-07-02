@@ -27,7 +27,7 @@ const Donate = () => {
     }
   };
   return (
-    <div className="relative mx-0 mb-4 mt-2 py-6 text-xs shadow-md md:px-20 md:py-12 md:text-sm lg:mx-32 lg:text-base">
+    <div className="relative mx-0 mb-4 mt-2 text-xs shadow-md md:px-20 md:py-12 md:text-sm lg:mx-32 lg:text-base">
       <p className="mb-3 ml-3 text-lg font-semibold text-gray-800 md:ml-0 lg:text-2xl">
         Ủng hộ cho eShelf
       </p>

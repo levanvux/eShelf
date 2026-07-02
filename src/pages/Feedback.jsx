@@ -8,7 +8,7 @@ const Feedback = () => {
         <p className="text-center text-3xl font-semibold text-sky-400">
           GỬI PHẢN HỒI CHO CHÚNG TÔI
         </p>
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
           <label className="w-44 px-4 py-2 text-right">Loại lỗi:</label>
           <select
             value={errorType}
@@ -44,7 +44,7 @@ const Feedback = () => {
             ""
           )}
         </div>
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
           <label className="w-44 px-4 py-2 text-right">
             <span className="text-red-600">* </span>Nội dung chi tiết:{" "}
           </label>
@@ -73,14 +73,14 @@ const Feedback = () => {
       </div>
       <div className="mx-20 mb-5 leading-8 text-gray-800">
         <p className="text-bold text-xl">Thông tin liên hệ:</p>
-        <p>
+        <p className="text-sm">
           <span className="text-gray-500">Địa chỉ:</span> Toà nhà Chọc Trời,
           TP.HCM, Việt Nam
         </p>
-        <p>
+        <p className="text-sm">
           <span className="text-gray-500">Số điện thoại:</span> 0123456789
         </p>
-        <p className="text-gray-500">
+        <p className="text-gray-500 text-sm">
           Email:{" "}
           <span className="cursor-pointer text-sky-400 hover:underline">
             deptrai@gmail.com

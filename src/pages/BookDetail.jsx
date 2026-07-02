@@ -29,7 +29,7 @@ const BookDetail = () => {
         </p>
         <div className="mb-20">
           <img
-            className="float-left mr-8 h-96 w-64 rounded-sm object-cover drop-shadow-[0_0.2rem_0.2rem_rgba(0,0,0,0.5)]"
+            className="float-left mr-8 h-96 w-64 rounded-sm object-cover drop-shadow-[0_0.2rem_0.2rem_rgba(0,0,0,0.5)] mb-1"
             src={book.coverUrl}
             alt=""
           />
@@ -112,7 +112,7 @@ const BookDetail = () => {
           </div>
           <div className="flex gap-2">
             <button
-              className="flex gap-1 rounded bg-sky-400 px-5 py-2 text-white hover:bg-sky-300"
+              className="flex gap-1 rounded bg-sky-400 px-5 py-2 text-white hover:bg-sky-300 text-sm md:text-base"
               onClick={() =>
                 navigate(`/reading/${book.isbn}`, { state: book.pdfUrl })
               }
@@ -120,12 +120,12 @@ const BookDetail = () => {
               <Play />
               Đọc sách
             </button>
-            <button className="flex gap-1 rounded border border-gray-300 px-5 py-2 text-gray-600 hover:border-sky-400">
+            <button className="flex gap-1 rounded border border-gray-300 px-5 py-2 text-gray-600 hover:border-sky-400 text-sm md:text-base">
               <Download />
               Tải xuống
             </button>
             <p
-              className="cursor-pointer py-2 text-amber-400 underline hover:text-amber-500"
+              className="cursor-pointer py-2 text-amber-400 underline hover:text-amber-500 text-sm md:text-base"
               onClick={() => navigate("/feedback")}
             >
               Báo cáo lỗi?
