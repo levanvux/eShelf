@@ -7,7 +7,7 @@ import ForgotPassword from "../components/auth/ForgotPassword.jsx";
 const LoginRegister = () => {
   const [authProcess, setAuthProcess] = useState("login");
   return (
-    <div className="flex h-screen items-center justify-center bg-[url('images/background-login-register.jpg')] bg-cover bg-center">
+    <div className="flex h-screen items-center justify-center bg-[url('/images/background-login-register.jpg')] bg-cover bg-center">
       <div className="flex w-96 flex-col gap-3 rounded bg-white p-4">
         <Logo />
         <p className="text-center text-sm text-gray-600">
