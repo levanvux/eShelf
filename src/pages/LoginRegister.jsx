@@ -10,6 +10,10 @@ const LoginRegister = () => {
     <div className="flex h-screen items-center justify-center bg-[url('images/background-login-register.jpg')] bg-cover bg-center">
       <div className="flex w-96 flex-col gap-3 rounded bg-white p-4">
         <Logo />
+        <p className="text-center text-sm text-gray-600">
+          Hiện tại tính năng đăng nhập / đăng ký của ứng dụng chỉ mang tính chất
+          demo.
+        </p>
         {authProcess === "login" ? (
           <Login setAuthProcess={setAuthProcess} />
         ) : authProcess === "register" ? (
