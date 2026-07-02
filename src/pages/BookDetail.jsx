@@ -29,7 +29,7 @@ const BookDetail = () => {
         </p>
         <div className="mb-20">
           <img
-            className="float-left mr-8 h-96 w-64 rounded-sm object-cover drop-shadow-[0_0.2rem_0.2rem_rgba(0,0,0,0.5)] mb-1"
+            className="float-left mr-8 h-96 w-64 rounded-sm object-cover drop-shadow-[0_0.2rem_0.2rem_rgba(0,0,0,0.5)] mb-3"
             src={book.coverUrl}
             alt=""
           />
@@ -112,7 +112,7 @@ const BookDetail = () => {
           </div>
           <div className="flex gap-2">
             <button
-              className="flex gap-1 rounded bg-sky-400 px-5 py-2 text-white hover:bg-sky-300 text-sm md:text-base"
+              className="flex gap-1 rounded bg-sky-400 px-2 md:px-5 py-2 text-white hover:bg-sky-300 text-sm md:text-base"
               onClick={() =>
                 navigate(`/reading/${book.isbn}`, { state: book.pdfUrl })
               }
@@ -120,7 +120,7 @@ const BookDetail = () => {
               <Play />
               Đọc sách
             </button>
-            <button className="flex gap-1 rounded border border-gray-300 px-5 py-2 text-gray-600 hover:border-sky-400 text-sm md:text-base">
+            <button className="flex gap-1 rounded border border-gray-300 px-2 md:px-5 py-2 text-gray-600 hover:border-sky-400 text-sm md:text-base">
               <Download />
               Tải xuống
             </button>
