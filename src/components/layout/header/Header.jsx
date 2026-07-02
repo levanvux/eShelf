@@ -20,8 +20,6 @@ const Header = ({ username, setUsername }) => {
           isSearchBoxOpen ? "gap-2" : "gap-4"
         }`}
       >
-        <Dropdown />
-        <SearchBox setIsSearchBoxOpen={setIsSearchBoxOpen} />
         {!username && (
           <Link
             to="auth"
@@ -30,6 +28,8 @@ const Header = ({ username, setUsername }) => {
             Đăng nhập
           </Link>
         )}
+        <SearchBox setIsSearchBoxOpen={setIsSearchBoxOpen} />
+        <Dropdown />
       </div>
     </div>
   );
