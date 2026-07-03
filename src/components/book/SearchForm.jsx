@@ -51,7 +51,20 @@ const SearchForm = ({ isSearchResultPage = false, genres = [] }) => {
   }
 
   return (
-    <>
+    <form
+      action={
+        searchValue || fromYear || toYear || genres.length > 0
+          ? "/search/" +
+            convertText(searchValue) +
+            "&" +
+            fromYear +
+            "-" +
+            toYear +
+            "&" +
+            convertArrayToString(genres)
+          : ""
+      }
+    >
       <div className="mx-4 mb-2 mt-8 flex border border-gray-400 hover:outline hover:outline-1 hover:outline-sky-400 md:mx-24 lg:mx-44">
         <input
           type="text"
@@ -60,13 +73,10 @@ const SearchForm = ({ isSearchResultPage = false, genres = [] }) => {
           placeholder="Tìm kiếm theo tên sách, tên tác giả, nxb..."
           className="w-full px-3 text-gray-800 focus:outline-none"
         />
-        <a
-          href={`${searchValue || fromYear || toYear || genres.length > 0 ? "/search/" + convertText(searchValue) + "&" + fromYear + "-" + toYear + "&" + convertArrayToString(genres) : ""}`}
-        >
-          <button className="border-l border-l-gray-400 bg-gray-200 px-6 py-2 text-gray-600 md:px-12">
-            Tìm
-          </button>
-        </a>
+
+        <button className="border-l border-l-gray-400 bg-gray-200 px-6 py-2 text-gray-600 md:px-12">
+          Tìm
+        </button>
       </div>
       {advancedSearch ? (
         <div className="mx-4 flex flex-col text-[0.9rem] md:mx-24 md:flex-row lg:mx-44">
@@ -76,14 +86,14 @@ const SearchForm = ({ isSearchResultPage = false, genres = [] }) => {
               value={fromYear}
               onChange={(e) => setFromYear(e.target.value)}
               placeholder="Từ năm"
-              className="mr-5 w-24 rounded border border-gray-300 px-3 py-[0.42rem] text-gray-800 [appearance:textfield] focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              className="mb-2 mr-5 w-24 rounded border border-gray-300 px-3 py-[0.42rem] text-gray-800 [appearance:textfield] focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
             <input
               type="number"
               value={toYear}
               onChange={(e) => setToYear(e.target.value)}
               placeholder="Đến năm"
-              className="mr-5 w-24 rounded border border-gray-300 py-[0.42rem] pl-3 pr-2 text-gray-800 [appearance:textfield] focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              className="mb-2 mr-5 w-24 rounded border border-gray-300 py-[0.42rem] pl-3 pr-2 text-gray-800 [appearance:textfield] focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
           </div>
 
@@ -92,7 +102,7 @@ const SearchForm = ({ isSearchResultPage = false, genres = [] }) => {
             onChange={setSelectedLanguages}
             options={languageOptions}
             placeholder="Chọn ngôn ngữ"
-            className="mr-5 w-52 text-gray-800"
+            className="mb-2 mr-5 w-52 text-gray-800"
             isMulti
           />
           <Select
@@ -100,7 +110,7 @@ const SearchForm = ({ isSearchResultPage = false, genres = [] }) => {
             onChange={setSelectedGenres}
             options={genreOptions}
             placeholder="Chọn thể loại"
-            className="w-60 text-gray-800 placeholder-pink-600"
+            className="mb-2 w-60 text-gray-800 placeholder-pink-600"
             isMulti
           />
         </div>
@@ -109,12 +119,12 @@ const SearchForm = ({ isSearchResultPage = false, genres = [] }) => {
           onClick={() => {
             setAdvancedSearch(true);
           }}
-          className="ml-4 w-[8.4rem] cursor-pointer border-b border-dashed border-gray-400 text-sm text-gray-400 md:ml-24 lg:ml-44"
+          className="ml-4 w-32 cursor-pointer border-b border-dashed border-gray-400 text-xs text-gray-400 md:ml-24 md:w-[8.4rem] md:text-sm lg:ml-44"
         >
           Tìm kiếm nâng cao
         </p>
       )}
-    </>
+    </form>
   );
 };
 

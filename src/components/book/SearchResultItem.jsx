@@ -27,11 +27,11 @@ const SearchResultItem = ({ bookDetail = null }) => {
             <img
               src={bookDetail.coverUrl}
               alt={bookDetail.title}
-              className="float-left aspect-[5/7] w-24 rounded-sm object-cover drop-shadow-[0_0.1rem_0.1rem_rgba(0,0,0,0.5)]"
+              className="float-left mr-3 aspect-[5/7] w-24 rounded-sm object-cover drop-shadow-[0_0.1rem_0.1rem_rgba(0,0,0,0.5)]"
             />
           </a>
           <div className="relative flex-grow">
-            <p>
+            <p className="w-64 md:w-auto">
               <a
                 href={`/book/${bookDetail.isbn}`}
                 target="_blank"
@@ -49,7 +49,7 @@ const SearchResultItem = ({ bookDetail = null }) => {
                 {bookDetail.publisher ? bookDetail.publisher : ""}
               </a>
             </p>
-            <p className="mt-2 cursor-pointer text-[0.925rem] text-sky-400">
+            <p className="cursor-pointer text-[0.925rem] text-sky-400 md:mt-2">
               {bookDetail.author && bookDetail.author.length > 0 ? (
                 bookDetail.author.map((au, index) => {
                   return (
@@ -68,21 +68,22 @@ const SearchResultItem = ({ bookDetail = null }) => {
             </p>
             <Heart
               onClick={() => setIsHeartClicked(!isHeartClicked)}
-              className={`absolute right-12 top-0 cursor-pointer ${isHeartClicked ? "text-sky-400" : "text-gray-400 hover:text-gray-500"}`}
+              className={`absolute bottom-0 right-12 cursor-pointer md:bottom-auto md:top-0 ${isHeartClicked ? "text-sky-400" : "text-gray-400 hover:text-gray-500"}`}
               fill={isHeartClicked ? "#38bdf8" : "#fff"}
             />
             <Bookmark
               onClick={() => setIsBookmarkClicked(!isBookmarkClicked)}
-              className={`absolute right-4 top-0 cursor-pointer ${isBookmarkClicked ? "text-amber-400" : "text-gray-400 hover:text-gray-500"}`}
+              className={`absolute bottom-0 right-4 cursor-pointer md:bottom-auto md:top-0 ${isBookmarkClicked ? "text-amber-400" : "text-gray-400 hover:text-gray-500"}`}
               fill={isBookmarkClicked ? "#fbbf24" : "#fff"}
             />
-            <p className="absolute bottom-0 right-0 text-[0.925rem] text-gray-500">
+            <p className="text-[0.925rem] text-gray-500 md:absolute md:bottom-0 md:right-0">
               {bookDetail.year && (
                 <>
                   Năm:{" "}
                   <span className="mr-4 text-gray-800">{bookDetail.year}</span>
                 </>
               )}
+              <br className="md:hidden" />
               {bookDetail.language && (
                 <>
                   Ngôn ngữ:{" "}
@@ -91,6 +92,7 @@ const SearchResultItem = ({ bookDetail = null }) => {
                   </span>
                 </>
               )}
+              <br className="md:hidden" />
               {bookDetail.extension && bookDetail.size && (
                 <>
                   File:{" "}
