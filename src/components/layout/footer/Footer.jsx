@@ -10,12 +10,13 @@ import {
 const Footer = () => {
   return (
     <footer className="border-t border-gray-300 text-gray-400">
-      <div className="grid grid-cols-3 overflow-hidden py-4 text-center text-sm">
+      <div className="grid grid-cols-1 gap-3 py-2 text-center md:grid-cols-3 md:overflow-hidden md:py-4 md:text-sm">
         <span className="cursor-pointer select-none">© 2024 eShelf.</span>
         <span className="cursor-pointer select-none">
           Điều khoản · Chính sách
         </span>
-        <span className="relative -right-24 -top-1 flex gap-4">
+        {/* <span className="relative -right-24 -top-1 flex gap-4"> */}
+        <span className="flex flex-wrap items-center justify-center gap-4 md:mr-24 md:justify-end">
           <AiFillFacebook
             className="cursor-pointer hover:text-gray-500"
             size={24}
